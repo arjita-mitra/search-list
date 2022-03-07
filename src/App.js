@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import {mockUserData} from './static/mockData.js';
+import SearchList from './commonUI/search/searchList';
+import {NO_MATCH_FOUND} from './constants/searchListConstants';
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const searchConfig = {
+        searchInput: {
+            elementType: 'searchInput',
+            elementConfig: {
+                id: 'searchUser',
+                name: 'searchInput',
+                type: 'search',
+                placeholder: 'Search users by ID, address, name'
+            },
+            value: ''
+        }
+    }
+    return (
+        <div className="App">
+            <SearchList mockUserData={mockUserData} notFoundMsg={NO_MATCH_FOUND} searchConfig={searchConfig}/>
+        </div>
+    );
 }
 
 export default App;

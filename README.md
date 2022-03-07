@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Search List
+
+We have a search input box which will search over a list of users.
+
+On typing in the search input box, the search results list opens up. The search could be just a string matching search. 
+
+The list of cards can be navigated through keyboard or mouse. Only one card should highlight at a time if both mouse and keyboard are used for navigation. Keyboard will take preference if mouse is kept hovered on the list, similarly mouse will take preference if keyboard navigation is not used. This behaviour is similar to how youtube search works.
+
+When no search results are found, an empty card is displayed
+
+The card list would be scrollable. The highlighted card (via keyboard/mouse) will scroll into view
 ## Available Scripts
 
 In the project directory, you can run:
